@@ -1,0 +1,147 @@
+:root {
+  --background-color: #ffffff; /* Light mode background color */
+  --text-color: #333333; /* Light mode text color */
+  --background-color-btn: #007bff;
+}
+
+.dark-mode {
+  --background-color-body: #5f5353; /* Dark mode background color */
+  --background-color-todo-wrap: #4d2c2c;
+  --background-color-btn: #220b0b;
+  --text-color: #cfcfcf; /* Dark mode text color */
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color-body);
+  color: var(--text-color);
+
+}
+
+/* Header styles */
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* TodoWrap styles */
+.todo-wrap {
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: var(--background-color-todo-wrap);
+  color: var(--text-color);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* TodoForm styles */
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+textarea.todo-input {
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  resize: vertical;
+  color: var(--text-color);
+  background-color: var(--background-color-todo-wrap);
+}
+
+.todo-btn {
+  background-color: var(--background-color-btn);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+
+/* Todo styles */
+.todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background-color: var(--background-color-todo-wrap);
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+/* Icon styles (assuming you have SVG icons) */
+.pen-icon,
+.trash-icon {
+  fill: var(--background-color-btn);
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  margin: 5px 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .todo-wrap {
+    max-width: 100%;
+  }
+}
+
+
+label {
+  top: -5px;
+  left: 5px;
+  width: 55px;
+  height: 30px;
+  position: relative;
+  display: block;
+  background: #ebebeb;
+  border-radius: 20px; 
+  cursor: pointer;
+}
+
+label:after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  background: #ffb758;
+  border-radius: 20px;
+}
+input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+input:checked + label {
+  background: #242424;
+}
+input:checked + label:after {
+  left: 51px;
+  transform: translateX(-100%);
+  background: #e0e0e0;
+}
+label,
+label:after {
+  transition: 0.3s;
+}
