@@ -11,6 +11,7 @@ export const Todo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
 
   useEffect(() => {
     localStorage.setItem(task.id, isAlternateIcon);
+    console.log("isAlternateIcon", isAlternateIcon)
   }, [isAlternateIcon]);
 
   const handleIconClick = () => {
