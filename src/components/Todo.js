@@ -6,12 +6,12 @@ import { ReactComponent as NotChecked } from "../svg/notChecked.svg";
 
 export const Todo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
   const [isAlternateIcon, setIsAlternateIcon] = useState(
-    localStorage.getItem(`iconState-${task.id}`) === "true"
+    localStorage.getItem(task.id) === "true"
   );
 
   useEffect(() => {
-    localStorage.setItem(`iconState-${task.id}`, isAlternateIcon.toString());
-  }, [isAlternateIcon, task.id]);
+    localStorage.setItem(task.id, isAlternateIcon);
+  }, [isAlternateIcon]);
 
   const handleIconClick = () => {
     setIsAlternateIcon(!isAlternateIcon);
