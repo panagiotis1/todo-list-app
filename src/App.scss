@@ -89,7 +89,9 @@ textarea.todo-input {
 
 /* Icon styles (assuming you have SVG icons) */
 .pen-icon,
-.trash-icon {
+.trash-icon,
+.notChecked-icon,
+.checked-icon {
   fill: var(--background-color-btn);
   width: 34px;
   height: 34px;
@@ -105,7 +107,7 @@ textarea.todo-input {
 }
 
 
-label {
+.label-darkmode {
   top: -5px;
   left: 5px;
   width: 55px;
@@ -117,7 +119,7 @@ label {
   cursor: pointer;
 }
 
-label:after {
+.label-darkmode:after {
   content: "";
   width: 25px;
   height: 25px;
@@ -133,15 +135,15 @@ input {
   visibility: hidden;
 }
 
-input:checked + label {
+input:checked + .label-darkmode {
   background: #242424;
 }
-input:checked + label:after {
+input:checked + .label-darkmode:after {
   left: 51px;
   transform: translateX(-100%);
   background: #e0e0e0;
 }
-label,
-label:after {
+.label-darkmode,
+.label-darkmode:after {
   transition: 0.3s;
 }

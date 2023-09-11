@@ -36,7 +36,7 @@ const DarkModeToggle = () => {
         checked={isDarkMode}
         readOnly
       />
-      <label htmlFor="darkmode-toggle" />
+      <label className='label-darkmode' htmlFor="darkmode-toggle" />
     </>
   );
 };
