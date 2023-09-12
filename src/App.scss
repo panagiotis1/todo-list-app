@@ -1,17 +1,17 @@
 :root {
-  --background-color: #ffffff; /* Light mode background color */
-  --text-color: #333333; /* Light mode text color */
+  --background-color: #ffffff;
+  --text-color: #333333; 
   --background-color-btn: #007bff;
 }
 
 .dark-mode {
-  --background-color-body: #5f5353; /* Dark mode background color */
+  --background-color-body: #5f5353;
   --background-color-todo-wrap: #4d2c2c;
   --background-color-btn: #220b0b;
-  --text-color: #cfcfcf; /* Dark mode text color */
+  --text-color: #cfcfcf;
 }
 
-/* Global styles */
+//---- Global styles
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -21,14 +21,14 @@ body {
 
 }
 
-/* Header styles */
+//---- Header styles
 h1 {
   font-size: 24px;
   text-align: center;
   margin: 20px 0;
 }
 
-/* TodoWrap styles */
+//---- TodoWrap styles
 .todo-wrap {
   margin-top: 10px;
   margin-left: 5px;
@@ -41,7 +41,7 @@ h1 {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* TodoForm styles */
+//---- TodoForm styles
 .todo-form {
   display: flex;
   flex-direction: column;
@@ -71,7 +71,7 @@ textarea.todo-input {
   margin: 0 0 10px 0;
 }
 
-/* Todo styles */
+//---- Todo styles
 .todo {
   display: flex;
   flex-direction: column;
@@ -87,7 +87,7 @@ textarea.todo-input {
   text-decoration: line-through;
 }
 
-/* Icon styles (assuming you have SVG icons) */
+//---- Icon styles (assuming you have SVG icons)
 .pen-icon,
 .trash-icon,
 .notChecked-icon,
@@ -99,7 +99,7 @@ textarea.todo-input {
   margin: 5px 20px;
 }
 
-/* Media query for smaller screens */
+//---- Media query for smaller screens
 @media (max-width: 768px) {
   .todo-wrap {
     max-width: 100%;
@@ -146,4 +146,69 @@ input:checked + .label-darkmode:after {
 .label-darkmode,
 .label-darkmode:after {
   transition: 0.3s;
+}
+
+//---- This is for delete message
+.confirmation-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal-content {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+
+      button {
+        margin: 0 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+
+        &.cancel {
+          background-color: #ccc;
+        }
+      }
+    }
+  }
+}
+
+//---- This is for delete message at dark mode
+.dark-mode .confirmation-modal { 
+  background: rgba(0, 0, 0, 0.6);
+
+  .modal-content {
+    background-color: var(--background-color-todo-wrap);
+
+    .btn-container {
+      button {
+        background-color: var(--background-color-btn);
+
+        &.cancel {
+          background-color: var(--background-color-body);
+        }
+      }
+    }
+  }
 }
